@@ -16,11 +16,6 @@
 #include <sys/types.h>
 #include <sys/stat.h>
 
-int check_isquote(char *buf, int i)
-{
-    return (buf[i] == '"' && buf[i-1] != '\\') ? 1 : 0;
-}
-
 int main(int argc, char *argv[])
 {
     int fd, quote = 0;
@@ -72,7 +67,7 @@ int main(int argc, char *argv[])
     buf = mmap(NULL, st.st_size, PROT_READ, MAP_SHARED, fd, 0);
 
     for (i = 0; i < (unsigned int) st.st_size; ++i) {
-        if (check_isquote(buf, i)) {
+        if (buf[i] == '"' && buf[i-1] != '\\') {
             /* we're at either the end or beginning of quote. */
             if (!quote) {
                 /* k, the start of a quote */
