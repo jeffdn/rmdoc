@@ -18,22 +18,7 @@
 
 int check_isquote(char *buf, int i)
 {
-
-    if (buf[i] != '"') {
-        return 0;
-    } else {
-        if (buf[i-1] == '\\') {
-            /* this was an escaped quote, damnit. return to 
-             * original position, and then return failure
-             */
-            return 0;
-        } else {
-            /* this IS a quote! return positive */
-            return 1;
-        }
-    }
-
-    return 0;
+    return (buf[i] == '"' && buf[i-1] != '\\') ? 1 : 0;
 }
 
 int main(int argc, char *argv[])
