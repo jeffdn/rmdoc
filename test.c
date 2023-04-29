@@ -5,11 +5,11 @@
 
 int main (int argc, char * /* blar */ argv[]) {
 	// funky fresh
-	/* I enjoy eating *******
-	 * many things a day ****
-	 * if you do not let me *
-	 * I will call you gay **
-	 ***********************/
+	/* I enjoy eating ********
+	 * many things a day *****
+	 * if you try to stop me *
+	 * I will do it anyway ***
+	 ************************/
 
 	printf ("don't delete this /* documentation */ \" /*partay!*/ \"\n");
 	
